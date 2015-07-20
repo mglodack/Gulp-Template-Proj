@@ -6,9 +6,15 @@
     "CssBuildDir": "./build/css"
   },
   "Source": {
-    "JsDir": "./src/js"
+    "JsDir": "./src/js/**/*.js",
+    "HtmlDir": "./src/index.html"
   },
   "Tasks": {
-    "Clean": "./gulp/tasks/clean"
+    "Clean": "./gulp/tasks/clean",
+    "Compress": "./gulp/tasks/compress",
+    "Html": "./gulp/tasks/html",
+    "JS": "./gulp/tasks/javascript",
+    "Minify": "./gulp/tasks/minify"
   }
+
 }

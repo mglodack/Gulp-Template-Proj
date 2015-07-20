@@ -4,7 +4,7 @@ var react = require('gulp-react');
 var uglify = require('gulp-uglify');
 
 var config = require('./config.json');
-var env = config.Environment;
+var env = config.Build;
 var src = config.Source;
 var tasks = config.Tasks;
 
@@ -13,17 +13,10 @@ var jsDir = './src/js/**/*.js';
 gulp.task('clean', require(tasks.Clean)(gulp, env.CleanDir));
 
 // Parse and compress JS and JSX files
-gulp.task('javascript', () => {
-  var response = gulp.src(jsDir)
-      .pipe(react())
-      .pipe(gulp.dest(config.JsBuildDir));
+gulp.task('javascript', require(tasks.JS)(gulp, src.JsDir, env.JsBuildDir));
 
-  response.on('error', (data) => {
-    console.log(data);
-  });
+gulp.task('html', require(tasks.Html)(gulp, src.HtmlDir, env.BuildDir));
 
-  return response;
-});
 gulp.task('default', () => {
-  console.log("Not yet implemented!);
+  console.log("Not yet implemented!");
 });
