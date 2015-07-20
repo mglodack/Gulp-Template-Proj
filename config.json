@@ -1,0 +1,14 @@
+{
+  "Build": {
+    "BuildDir": "./build",
+    "CleanDir": "./build/*",
+    "JsBuildDir": "./build/javascript",
+    "CssBuildDir": "./build/css"
+  },
+  "Source": {
+    "JsDir": "./src/js"
+  },
+  "Tasks": {
+    "Clean": "./gulp/tasks/clean"
+  }
+}
